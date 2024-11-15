@@ -1,6 +1,6 @@
 # Year-2024-25
 
-Welcome to the **Department of AI and DS, NKOCET** projects repository for the academic year **2024-25**. This repository showcases an array of student and faculty projects aimed at addressing real-world challenges using cutting-edge technologies.
+Welcome to the **Department of AI and DS, N. K. Orchid College of Engineering & Technology**  projects repository for the academic year **2024-25**. This repository showcases an array of student and faculty projects aimed at addressing real-world challenges using cutting-edge technologies. For more information about the college, visit [www.orchidengg.ac.in](https://www.orchidengg.ac.in/).
 
 ---
 
@@ -67,8 +67,3 @@ Welcome to the **Department of AI and DS, NKOCET** projects repository for the a
 ## Contact
 
 For inquiries or feedback, reach out to the Department of AI and DS, NKOCET.
-
----
-
-### Official Website:
-[www.orchidengg.ac.in](https://www.orchidengg.ac.in/)
