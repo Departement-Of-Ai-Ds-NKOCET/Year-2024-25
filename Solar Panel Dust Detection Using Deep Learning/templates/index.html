@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Panel Dust Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4CAF50, #81C784); /* Gradient background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-size: cover;
+            color: #333;
+        }
+
+        h1 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Shadow effect on title */
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Sidebar Effect */
+        .sidebar-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.05);
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.05);
+            box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .input-file {
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 16px;
+            transition: border 0.3s ease;
+        }
+
+        .input-file:hover {
+            border: 2px solid #4CAF50;
+        }
+
+        .result {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .result img {
+            margin-top: 20px;
+            max-width: 300px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .result img:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .icons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .icons img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Solar Panel Dust Prediction</h1>
+
+    <div class="sidebar-left"></div>
+    <div class="sidebar-right"></div>
+
+    <div class="container">
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <label for="image" style="font-size: 18px; font-weight: bold;">Upload a Solar Panel Image:</label><br>
+            <input type="file" id="image" name="image" accept="image/*" class="input-file" required><br>
+            <button type="submit" class="btn">Predict Dustiness</button>
+        </form>
+
+        {% if dustiness is not none %}
+            <div class="result">
+                <h2>Prediction Result:</h2>
+                <p><strong>Dustiness Level:</strong> {{ dustiness }}</p>
+                <img src="{{ image_path }}" alt="Uploaded Image">
+            </div>
+        {% endif %}
+        
+        <div class="icons">
+            <img src="https://img.icons8.com/ios/50/000000/solar-panel.png" alt="Solar Panel Icon">
+            <img src="https://img.icons8.com/ios/50/000000/clean.png" alt="Clean Icon">
+            <img src="https://icons8.com/icon/19565/dust" alt="Dust Icon">
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Powered by <a href="https://www.example.com" target="_blank">Diskha and Sneha</a></p>
+    </div>
+</body>
+</html>
