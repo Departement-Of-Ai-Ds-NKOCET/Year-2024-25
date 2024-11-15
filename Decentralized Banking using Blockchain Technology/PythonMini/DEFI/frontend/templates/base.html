@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="{{ refreshtime }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <title>{% block title %}{% endblock%}</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="/" class="nav-logo-link">
+                    <svg class="nav-logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#6C63FF"/>
+                                <stop offset="100%" style="stop-color:#FF6B6B"/>
+                            </linearGradient>
+                        </defs>
+                        <g transform="translate(100 100)">
+                            <path d="M25,-43.3 L43.3,-25 L43.3,25 L25,43.3 L-25,43.3 L-43.3,25 L-43.3,-25 L-25,-43.3 Z" 
+                                  fill="none" 
+                                  stroke="url(#logoGradient)" 
+                                  stroke-width="4"/>
+                            <circle r="15" 
+                                    fill="none" 
+                                    stroke="url(#logoGradient)" 
+                                    stroke-width="4"/>
+                        </g>
+                    </svg>
+                    <span class="brand-text">Krypt</span>
+                </a>
+            </div>
+            
+            <div class="nav-links-container">
+                <a class="nav-link {% if active=='home' %}active{% endif %}" href="/">
+                    Home
+                    <span class="nav-link-highlight"></span>
+                </a>
+                <a class="nav-link {% if active=='block' %}active{% endif %}" href="{{ url_for('deposit') }}">
+                    Deposit
+                    <span class="nav-link-highlight"></span>
+                </a>
+                <a class="nav-link {% if active=='Transactions' %}active{% endif %}" href="{{ url_for('FundMe') }}">
+                    Transfer
+                    <span class="nav-link-highlight"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="../static/animations.js"></script>
+</body>
+</html>

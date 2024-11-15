@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block title %}Krypt - Liquidity Protocol{% endblock %}
+
+{% block content %}
+<div class="defi-container">
+    <div class="protocol-header">
+        <div class="protocol-title">
+            <h1 class="gradient-text">ANNI Liquidity Protocol</h1>
+            <p class="protocol-subtitle">Secure. Decentralized. Efficient.</p>
+        </div>
+    </div>
+
+    <div class="defi-grid">
+        <!-- Deposit Card -->
+        <div class="defi-card deposit-card">
+            <div class="card-header">
+                <div class="card-icon deposit-icon">
+                    <svg viewBox="0 0 24 24" class="action-icon">
+                        <path d="M12 4l-8 8h6v8h4v-8h6z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h2>Deposit USDC</h2>
+            </div>
+            
+            <div class="balance-display">
+                <p class="balance-label">Available Balance</p>
+                <h3 id="staki" class="balance-amount">{{ AvailableBal }} USDC</h3>
+            </div>
+
+            <form action="/depositButton" method="post" class="defi-form">
+                <div class="input-container">
+                    <input type="number" 
+                           id="stakeValue" 
+                           name="depositValue" 
+                           required="required" 
+                           class="token-input"
+                           placeholder="Enter amount">
+                    <span class="token-symbol">USDC</span>
+                </div>
+                <button class="action-button deposit-button" name="submit-button" type="submit">
+                    <span class="button-text">Deposit Tokens</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- Account Selection Card -->
+        <div class="defi-card account-card">
+            <div class="card-header">
+                <div class="card-icon account-icon">
+                    <svg viewBox="0 0 24 24" class="action-icon">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h2>Select Account</h2>
+            </div>
+            
+            <form method="post" class="account-form">
+                {{ form.Faccounts(class="account-select") }}
+            </form>
+        </div>
+
+        <!-- Withdraw Card -->
+        <div class="defi-card withdraw-card">
+            <div class="card-header">
+                <div class="card-icon withdraw-icon">
+                    <svg viewBox="0 0 24 24" class="action-icon">
+                        <path d="M12 20l-8-8h6V4h4v8h6z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h2>Withdraw USDC</h2>
+            </div>
+
+            <div class="balance-display">
+                <p class="balance-label">Deposited Balance</p>
+                <h3 id="unstaki" class="balance-amount">{{ DepositedAmount }} USDC</h3>
+            </div>
+
+            <form action="/withdrawButton" method="post" class="defi-form">
+                <div class="input-container">
+                    <input type="number" 
+                           id="unstakeValue" 
+                           name="withdrawValue" 
+                           required="required"
+                           class="token-input"
+                           placeholder="Enter amount">
+                    <span class="token-symbol">USDC</span>
+                </div>
+                <button class="action-button withdraw-button" name="submit-button" type="submit">
+                    <span class="button-text">Withdraw Tokens</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% block javascript %}
+<script>
+let account_var = document.getElementById('Faccounts');
+account_var.onchange = function() {
+    // Add loading state
+    document.getElementById('staki').classList.add('loading');
+    document.getElementById('unstaki').classList.add('loading');
+    
+    fetch('/refresh/' + account_var.value).then(function(response) {
+        response.json().then(function(data) {
+            // Update balances with animation
+            gsap.to("#staki", {
+                opacity: 0,
+                duration: 0.3,
+                onComplete: function() {
+                    document.getElementById('staki').innerHTML = data.currentBal + " USDC";
+                    gsap.to("#staki", {
+                        opacity: 1,
+                        duration: 0.3
+                    });
+                }
+            });
+
+            gsap.to("#unstaki", {
+                opacity: 0,
+                duration: 0.3,
+                onComplete: function() {
+                    document.getElementById('unstaki').innerHTML = data.stakedBalance + " USDC";
+                    gsap.to("#unstaki", {
+                        opacity: 1,
+                        duration: 0.3
+                    });
+                }
+            });
+
+            // Remove loading state
+            document.getElementById('staki').classList.remove('loading');
+            document.getElementById('unstaki').classList.remove('loading');
+        });
+    });
+} 
+</script>
+{% endblock %}
+
+{% endblock %}

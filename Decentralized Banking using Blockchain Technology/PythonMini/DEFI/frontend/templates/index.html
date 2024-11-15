@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Krypt - Decentralized Banking{% endblock %}
+{% block content %}
+<div class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">
+            <span class="gradient-text">Decentralized</span>
+            <span class="hero-subtitle">Banking for the Future</span>
+        </h1>
+        <p class="hero-description">Secure, transparent, and efficient financial services powered by blockchain technology</p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('deposit') }}" class="cta-button primary">Start Banking</a>
+            <a href="{{ url_for('FundMe') }}" class="cta-button secondary">Transfer Amount</a>
+        </div>
+    </div>
+    <div class="hero-graphics">
+        <div class="floating-elements">
+            <div class="crypto-circle"></div>
+            <div class="tech-square"></div>
+            <div class="blockchain-hex"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
