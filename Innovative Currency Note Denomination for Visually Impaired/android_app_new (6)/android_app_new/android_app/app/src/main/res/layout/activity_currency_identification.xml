@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:text="Currency Recognition"
+        android:textAllCaps="false"
+        android:textSize="28sp"
+        android:backgroundTint="#A45EE5"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="40dp"
+        android:padding="20dp"/>
+
+    <!-- Large Button for selecting Hindi -->
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:text="Currency Counting"
+        android:textAllCaps="false"
+        android:textSize="28sp"
+        android:backgroundTint="#A45EE5"
+        android:textColor="#FFFFFF"
+        android:padding="20dp"/>
+
+</LinearLayout>

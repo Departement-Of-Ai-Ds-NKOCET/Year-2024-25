@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="#F4F1F7">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="255dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/request_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please give permission for camera and mic to scan Indian currency and record audio"
+        android:textColor="#4A4A4A"
+        android:textSize="16sp"
+        android:paddingTop="16dp"
+        />
+
+    <!-- Hindi Texts -->
+    <TextView
+        android:id="@+id/note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:text="Note: Only by allowing mic you will be able to put voice commands"
+        android:textColor="#A855F7"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/hindi_request_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="कृपया भारतीय मुद्रा स्कैन करने और ऑडियो रिकॉर्ड करने के लिए कैमरा और माइक्रोफोन की अनुमति दें।"
+        android:textColor="#4A4A4A"
+        android:textSize="16sp"
+        android:paddingTop="16dp"
+        />
+
+    <TextView
+        android:id="@+id/hindi_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ध्यान दें: केवल माइक्रोफ़ोन की अनुमति देकर ही आप वॉयस कमांड दे सकेंगे।"
+        android:textColor="#A855F7"
+        android:textSize="14sp"
+        android:paddingTop="8dp"
+        />
+
+</LinearLayout>

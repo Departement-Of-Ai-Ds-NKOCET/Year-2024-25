@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="#F4F1F7">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="255dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/request_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:paddingTop="16dp"
+        android:text="Welcome to TRINETRA Application."
+        android:textColor="#4A4A4A"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/request_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="You can choose language for app from out of 2 available languages."
+        android:textColor="#4A4A4A"
+        android:textSize="16sp"
+        android:paddingTop="16dp"
+        />
+
+
+    <TextView
+        android:id="@+id/note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:text="Note: denomination of the note will be in same language"
+        android:textColor="#A855F7"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/hindi_request_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="त्रिनेत्रा एप्लिकेशन में आपका स्वागत है। आप एप्लिकेशन के लिए 2 उपलब्ध भाषाओं में से कोई भी भाषा चुन सकते हैं।"
+        android:textColor="#4A4A4A"
+        android:textSize="16sp"
+        android:paddingTop="16dp"
+        />
+
+    <TextView
+        android:id="@+id/hindi_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ध्यान दें: नोट का मूल्यांकन (मूल्य) उसी भाषा में होगा।"
+        android:textColor="#A855F7"
+        android:textSize="14sp"
+        android:paddingTop="8dp"
+        />
+
+    <TextView
+        android:id="@+id/hindi_note1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:text="To choose your language. click on below button"
+        android:textColor="#A855F7"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:text="Select App Language"
+        android:textAllCaps="false"
+        android:textSize="28sp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#A45EE5"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="40dp"
+        android:padding="20dp"/>
+
+</LinearLayout>
