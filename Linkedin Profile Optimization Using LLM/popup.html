@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Profile Optimizer</title>
+    <script src="dist/bundle.js" defer></script> <!-- Use your bundled script -->
+    <style>
+        /* General styling for the popup */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+            width: 400px;
+            background-color: #FFE6A2; /* Soft yellow background */
+            height: auto;
+            color: #2a2a2a; /* Default text color */
+        }
+        ::-webkit-scrollbar {
+            width: 10px; /* Width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #FFE6A2; /* Matches body background */
+            border-radius: 5px;
+        }
+
+        /* Scrollbar handle */
+        ::-webkit-scrollbar-thumb {
+            background-color: #643ED5; /* Primary color for scrollbar thumb */
+            border-radius: 5px;
+            border: 2px solid #FFE6A2; /* Border matches the background */
+        }
+
+        /* Scrollbar handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #4B2BA7; /* Darker shade for hover effect */
+        }
+
+        h2 {
+            text-align: center;
+            color: #643ED5; /* Logo color - rich purple */
+            font-size: 24px;
+        }
+    
+        .profile-section {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fff; /* White background for sections */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    
+        .profile-section h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #643ED5; /* Heading color to match logo */
+        }
+    
+    /* General styling for the status message */
+    #statusMessage {
+        font-weight: bold;
+        text-align: center;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;  /* Add space between status message and button */
+        font-size: 14px;
+    }
+
+    /* Success message styling */
+    .success {
+        color: #28a745; /* Green color for success */
+        background-color: #e9f7e9; /* Light green background */
+    }
+
+    /* Error message styling */
+    .error {
+        color: #d9534f; /* Red color for error */
+        background-color: #f8d7da; /* Light red background */
+    }
+
+
+    
+        #optimizedContent {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background-color: #643ED5; /* Purple background for buttons */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    
+        button:hover {
+            background-color: #4B2BA7; /* Darker purple on hover */
+        }
+    
+        /* Styling for input fields, textareas, etc. */
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            background-color: #fff;
+        }
+    
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: #643ED5; /* Highlight border on focus with logo color */
+        }
+    
+    </style>
+    
+</head>
+<body>
+    <h2>LinkedIn Profile Optimizer</h2>
+
+    <!-- Profile Data Section -->
+    <div class="profile-section">
+        <h3>Profile Data</h3>
+        <h4>Name</h4>
+        <div id="name">Name not found</div>
+        <h4>Headline</h4>
+        <div id="headline">Headline not found</div>
+        <h4>Summary</h4>
+        <div id="summary">Summary not found</div>
+    </div>
+
+    <!-- Action Buttons Section -->
+    <div class="profile-section">
+        <button id="refreshButton">Refresh Profile Data</button>
+        <p id="statusMessage"></p>
+    </div>
+
+    <div class="profile-section">
+        <button id="optimize">Optimize Profile</button>
+    </div>
+
+    <!-- Optimized Content Section -->
+    <div id="optimizedContent">
+        <h3>Optimized Content</h3>
+        <p>Your optimized content will appear here...</p>
+        </div>
+    <div>
+        <button id="downloadPdfButton">Download PDF</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+    "name": "LinkedInProfileOptimizer",
+    "version": "1.0.0",
+    "scripts": {
+      "build": "webpack --config webpack.config.js"
+    },
+    "dependencies": {
+      "webpack": "^5.0.0"
+    }
+  }
+  
